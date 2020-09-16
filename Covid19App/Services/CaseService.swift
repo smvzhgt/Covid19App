@@ -9,7 +9,8 @@
 import Foundation
 
 protocol CaseServiceProtocol {
-    
+    func fetchAllCases(completion: @escaping (Result<GlobalCasesModel, CommonError>) -> Void)
+    func fetchCountriesCases(completion: @escaping (Result<[CaseModel], CommonError>) -> Void)
 }
 
 final class CaseService {
@@ -26,5 +27,13 @@ final class CaseService {
 
 // MARK: - Extension
 extension CaseService: CaseServiceProtocol {
+    
+    func fetchAllCases(completion: @escaping (Result<GlobalCasesModel, CommonError>) -> Void) {
+        apiClient.fetchAllCases(completion: completion)
+    }
+    
+    func fetchCountriesCases(completion: @escaping (Result<[CaseModel], CommonError>) -> Void) {
+        apiClient.fetchCountriesCases(completion: completion)
+    }
     
 }
