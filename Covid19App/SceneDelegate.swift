@@ -10,12 +10,16 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    // MARK: - Public Properties
     var window: UIWindow?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
  
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        // Set root view controller
+        setRootController(windowScene: windowScene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -36,6 +40,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
  
+    }
+
+    
+    // MARK: - Private Function
+    private func setRootController(windowScene: UIWindowScene) {
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.rootViewController = MainBuilder().build()
+        window?.windowScene = windowScene
+        window?.makeKeyAndVisible()
     }
 
 }

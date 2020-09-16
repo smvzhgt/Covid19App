@@ -20,6 +20,9 @@
 		0CA394D525122A230083897E /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CC25122A230083897E /* CommonError.swift */; };
 		0CA394D625122A230083897E /* RequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CD25122A230083897E /* RequestExecutor.swift */; };
 		0CA394D725122A230083897E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CE25122A230083897E /* HTTPMethod.swift */; };
+		0CA394DE25123C070083897E /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394DD25123C070083897E /* MainBuilder.swift */; };
+		0CA394E025123C2E0083897E /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394DF25123C2E0083897E /* ModuleBuilder.swift */; };
+		0CA394E325123C5A0083897E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E225123C5A0083897E /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		0CA394CC25122A230083897E /* CommonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		0CA394CD25122A230083897E /* RequestExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExecutor.swift; sourceTree = "<group>"; };
 		0CA394CE25122A230083897E /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0CA394DD25123C070083897E /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
+		0CA394DF25123C2E0083897E /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		0CA394E225123C5A0083897E /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		0CA394C1251229810083897E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0CA394D825123B310083897E /* Main */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 		0CA394C32512299B0083897E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0CA394DF25123C2E0083897E /* ModuleBuilder.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -142,6 +150,31 @@
 			children = (
 			);
 			path = RequestData;
+			sourceTree = "<group>";
+		};
+		0CA394D825123B310083897E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0CA394E125123C4E0083897E /* View */,
+				0CA394DC25123B6A0083897E /* Builder */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0CA394DC25123B6A0083897E /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0CA394DD25123C070083897E /* MainBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		0CA394E125123C4E0083897E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CA394E225123C5A0083897E /* MainTabBarViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,13 +251,16 @@
 				0CA394AF251225D00083897E /* ViewController.swift in Sources */,
 				0CA394AB251225D00083897E /* AppDelegate.swift in Sources */,
 				0CA394D325122A230083897E /* APIClient.swift in Sources */,
+				0CA394DE25123C070083897E /* MainBuilder.swift in Sources */,
 				0CA394D625122A230083897E /* RequestExecutor.swift in Sources */,
 				0CA394D525122A230083897E /* CommonError.swift in Sources */,
 				0CA394D125122A230083897E /* Endpoint.swift in Sources */,
+				0CA394E325123C5A0083897E /* MainTabBarViewController.swift in Sources */,
 				0CA394D725122A230083897E /* HTTPMethod.swift in Sources */,
 				0CA394D225122A230083897E /* UrlBuilder.swift in Sources */,
 				0CA394D425122A230083897E /* APIRequest.swift in Sources */,
 				0CA394AD251225D00083897E /* SceneDelegate.swift in Sources */,
+				0CA394E025123C2E0083897E /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

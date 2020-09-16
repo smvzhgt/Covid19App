@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GlobalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,3 +17,11 @@ class ViewController: UIViewController {
 
 }
 
+class CountriesViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+
+}
