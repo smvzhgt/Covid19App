@@ -13,6 +13,13 @@
 		0CA394B2251225D00083897E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CA394B0251225D00083897E /* Main.storyboard */; };
 		0CA394B4251225D20083897E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA394B3251225D20083897E /* Assets.xcassets */; };
 		0CA394B7251225D20083897E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CA394B5251225D20083897E /* LaunchScreen.storyboard */; };
+		0CA394D125122A230083897E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394C825122A230083897E /* Endpoint.swift */; };
+		0CA394D225122A230083897E /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394C925122A230083897E /* UrlBuilder.swift */; };
+		0CA394D325122A230083897E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CA25122A230083897E /* APIClient.swift */; };
+		0CA394D425122A230083897E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CB25122A230083897E /* APIRequest.swift */; };
+		0CA394D525122A230083897E /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CC25122A230083897E /* CommonError.swift */; };
+		0CA394D625122A230083897E /* RequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CD25122A230083897E /* RequestExecutor.swift */; };
+		0CA394D725122A230083897E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394CE25122A230083897E /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		0CA394B3251225D20083897E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CA394B6251225D20083897E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CA394B8251225D20083897E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CA394C825122A230083897E /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0CA394C925122A230083897E /* UrlBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
+		0CA394CA25122A230083897E /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		0CA394CB25122A230083897E /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		0CA394CC25122A230083897E /* CommonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
+		0CA394CD25122A230083897E /* RequestExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExecutor.swift; sourceTree = "<group>"; };
+		0CA394CE25122A230083897E /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +70,14 @@
 		0CA394A9251225D00083897E /* Covid19App */ = {
 			isa = PBXGroup;
 			children = (
+				0CA394C4251229AA0083897E /* Data */,
+				0CA394C32512299B0083897E /* Common */,
+				0CA394C2251229900083897E /* Network */,
+				0CA394C1251229810083897E /* Scenes */,
+				0CA394C0251227910083897E /* Resources */,
 				0CA394BE251226300083897E /* Application */,
 				0CA394AE251225D00083897E /* ViewController.swift */,
 				0CA394B0251225D00083897E /* Main.storyboard */,
-				0CA394B3251225D20083897E /* Assets.xcassets */,
-				0CA394B5251225D20083897E /* LaunchScreen.storyboard */,
 			);
 			path = Covid19App;
 			sourceTree = "<group>";
@@ -73,6 +90,58 @@
 				0CA394AC251225D00083897E /* SceneDelegate.swift */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		0CA394C0251227910083897E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0CA394B5251225D20083897E /* LaunchScreen.storyboard */,
+				0CA394B3251225D20083897E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0CA394C1251229810083897E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0CA394C2251229900083897E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0CA394C525122A230083897E /* RequestData */,
+				0CA394CA25122A230083897E /* APIClient.swift */,
+				0CA394CB25122A230083897E /* APIRequest.swift */,
+				0CA394CC25122A230083897E /* CommonError.swift */,
+				0CA394C825122A230083897E /* Endpoint.swift */,
+				0CA394CE25122A230083897E /* HTTPMethod.swift */,
+				0CA394CD25122A230083897E /* RequestExecutor.swift */,
+				0CA394C925122A230083897E /* UrlBuilder.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0CA394C32512299B0083897E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0CA394C4251229AA0083897E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0CA394C525122A230083897E /* RequestData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +217,13 @@
 			files = (
 				0CA394AF251225D00083897E /* ViewController.swift in Sources */,
 				0CA394AB251225D00083897E /* AppDelegate.swift in Sources */,
+				0CA394D325122A230083897E /* APIClient.swift in Sources */,
+				0CA394D625122A230083897E /* RequestExecutor.swift in Sources */,
+				0CA394D525122A230083897E /* CommonError.swift in Sources */,
+				0CA394D125122A230083897E /* Endpoint.swift in Sources */,
+				0CA394D725122A230083897E /* HTTPMethod.swift in Sources */,
+				0CA394D225122A230083897E /* UrlBuilder.swift in Sources */,
+				0CA394D425122A230083897E /* APIRequest.swift in Sources */,
 				0CA394AD251225D00083897E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
