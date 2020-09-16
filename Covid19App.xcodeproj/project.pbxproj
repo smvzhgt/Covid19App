@@ -26,6 +26,8 @@
 		0CA394E5251245280083897E /* CaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E4251245280083897E /* CaseModel.swift */; };
 		0CA394E7251247B50083897E /* GlobalCasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E6251247B50083897E /* GlobalCasesModel.swift */; };
 		0CA394EA251248810083897E /* CaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E9251248810083897E /* CaseService.swift */; };
+		0CA394EC25124A0B0083897E /* AllCasesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394EB25124A0B0083897E /* AllCasesRequest.swift */; };
+		0CA394EE25124C900083897E /* CountiesCasesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394ED25124C900083897E /* CountiesCasesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		0CA394E4251245280083897E /* CaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseModel.swift; sourceTree = "<group>"; };
 		0CA394E6251247B50083897E /* GlobalCasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCasesModel.swift; sourceTree = "<group>"; };
 		0CA394E9251248810083897E /* CaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseService.swift; sourceTree = "<group>"; };
+		0CA394EB25124A0B0083897E /* AllCasesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCasesRequest.swift; sourceTree = "<group>"; };
+		0CA394ED25124C900083897E /* CountiesCasesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesCasesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 		0CA394C525122A230083897E /* RequestData */ = {
 			isa = PBXGroup;
 			children = (
+				0CA394EB25124A0B0083897E /* AllCasesRequest.swift */,
+				0CA394ED25124C900083897E /* CountiesCasesRequest.swift */,
 			);
 			path = RequestData;
 			sourceTree = "<group>";
@@ -273,7 +279,9 @@
 				0CA394D625122A230083897E /* RequestExecutor.swift in Sources */,
 				0CA394D525122A230083897E /* CommonError.swift in Sources */,
 				0CA394D125122A230083897E /* Endpoint.swift in Sources */,
+				0CA394EC25124A0B0083897E /* AllCasesRequest.swift in Sources */,
 				0CA394E325123C5A0083897E /* MainTabBarViewController.swift in Sources */,
+				0CA394EE25124C900083897E /* CountiesCasesRequest.swift in Sources */,
 				0CA394EA251248810083897E /* CaseService.swift in Sources */,
 				0CA394D725122A230083897E /* HTTPMethod.swift in Sources */,
 				0CA394E5251245280083897E /* CaseModel.swift in Sources */,

@@ -7,5 +7,7 @@
 //
 
 struct Endpoint {
-    static let baseUrl = ""
+    static let scheme = "https"
+    static let host = "coronavirus-19-api.herokuapp.com"
+    static let baseUrl = "https://coronavirus-19-api.herokuapp.com"
 }
