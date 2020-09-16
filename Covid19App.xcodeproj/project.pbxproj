@@ -23,6 +23,8 @@
 		0CA394DE25123C070083897E /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394DD25123C070083897E /* MainBuilder.swift */; };
 		0CA394E025123C2E0083897E /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394DF25123C2E0083897E /* ModuleBuilder.swift */; };
 		0CA394E325123C5A0083897E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E225123C5A0083897E /* MainTabBarViewController.swift */; };
+		0CA394E5251245280083897E /* CaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E4251245280083897E /* CaseModel.swift */; };
+		0CA394E7251247B50083897E /* GlobalCasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E6251247B50083897E /* GlobalCasesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		0CA394DD25123C070083897E /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		0CA394DF25123C2E0083897E /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		0CA394E225123C5A0083897E /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		0CA394E4251245280083897E /* CaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseModel.swift; sourceTree = "<group>"; };
+		0CA394E6251247B50083897E /* GlobalCasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCasesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 		0CA394C4251229AA0083897E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0CA394E4251245280083897E /* CaseModel.swift */,
+				0CA394E6251247B50083897E /* GlobalCasesModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -252,11 +258,13 @@
 				0CA394AB251225D00083897E /* AppDelegate.swift in Sources */,
 				0CA394D325122A230083897E /* APIClient.swift in Sources */,
 				0CA394DE25123C070083897E /* MainBuilder.swift in Sources */,
+				0CA394E7251247B50083897E /* GlobalCasesModel.swift in Sources */,
 				0CA394D625122A230083897E /* RequestExecutor.swift in Sources */,
 				0CA394D525122A230083897E /* CommonError.swift in Sources */,
 				0CA394D125122A230083897E /* Endpoint.swift in Sources */,
 				0CA394E325123C5A0083897E /* MainTabBarViewController.swift in Sources */,
 				0CA394D725122A230083897E /* HTTPMethod.swift in Sources */,
+				0CA394E5251245280083897E /* CaseModel.swift in Sources */,
 				0CA394D225122A230083897E /* UrlBuilder.swift in Sources */,
 				0CA394D425122A230083897E /* APIRequest.swift in Sources */,
 				0CA394AD251225D00083897E /* SceneDelegate.swift in Sources */,
