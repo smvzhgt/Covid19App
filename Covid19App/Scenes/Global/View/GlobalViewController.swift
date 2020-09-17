@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class GlobalViewController: UIViewController {
+final class GlobalViewController: BaseViewController {
     
     // MARK: - Public Properties
     var interactor: GlobalInteractorProtocol!
@@ -36,6 +36,7 @@ final class GlobalViewController: UIViewController {
     }
     
     private func fetchInformation() {
+        showLoading()
         let request = Global.Fetch.Request()
         interactor.fetchGlobalInformation(request: request)
     }
@@ -46,8 +47,9 @@ final class GlobalViewController: UIViewController {
 // MARK: - Extensions
 extension GlobalViewController: GlobalViewProtocol {
     func displayFetchGlobalInformation(viewModel: Global.Fetch.ViewModel) {
+        hideLoading()
         if let error = viewModel.error {
-            // TODO: show error
+            showWarningDialog(message: error.localizedDescription)
         } else {
             delegate.dataSource = viewModel.models
             tableView.reloadData()
