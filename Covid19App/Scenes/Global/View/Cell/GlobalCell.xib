@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aIT-5q-bmz" customClass="GlobalCell" customModule="Covid19App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aIT-5q-bmz" id="nHE-Pf-3hg">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hq-YP-Ji2">
@@ -22,13 +22,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-Wt-DaS">
-                        <rect key="frame" x="8" y="63" width="398" height="29"/>
+                        <rect key="frame" x="8" y="73" width="398" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paF-qv-M91">
-                        <rect key="frame" x="8" y="38" width="398" height="24"/>
+                        <rect key="frame" x="8" y="33" width="398" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,12 +37,13 @@
                 <constraints>
                     <constraint firstItem="2Hq-YP-Ji2" firstAttribute="leading" secondItem="nHE-Pf-3hg" secondAttribute="leading" constant="8" id="1L8-Z2-aKd"/>
                     <constraint firstAttribute="trailing" secondItem="2Hq-YP-Ji2" secondAttribute="trailing" constant="8" id="1bc-1U-GCz"/>
-                    <constraint firstItem="paF-qv-M91" firstAttribute="centerY" secondItem="nHE-Pf-3hg" secondAttribute="centerY" id="72n-VF-H49"/>
+                    <constraint firstAttribute="bottom" secondItem="Cvi-Wt-DaS" secondAttribute="bottom" constant="8" id="4a5-NJ-goi"/>
                     <constraint firstItem="Cvi-Wt-DaS" firstAttribute="leading" secondItem="nHE-Pf-3hg" secondAttribute="leading" constant="8" id="B6p-Kg-oaj"/>
                     <constraint firstAttribute="trailing" secondItem="Cvi-Wt-DaS" secondAttribute="trailing" constant="8" id="JTh-ie-8ce"/>
-                    <constraint firstAttribute="bottom" secondItem="Cvi-Wt-DaS" secondAttribute="bottom" constant="8" id="Xcs-5T-9kr"/>
+                    <constraint firstItem="Cvi-Wt-DaS" firstAttribute="top" secondItem="paF-qv-M91" secondAttribute="bottom" constant="16" id="Rc8-SD-0uE"/>
                     <constraint firstItem="2Hq-YP-Ji2" firstAttribute="top" secondItem="nHE-Pf-3hg" secondAttribute="top" constant="8" id="hnD-hh-bwp"/>
                     <constraint firstAttribute="trailing" secondItem="paF-qv-M91" secondAttribute="trailing" constant="8" id="iXy-ud-uJg"/>
+                    <constraint firstItem="paF-qv-M91" firstAttribute="top" secondItem="2Hq-YP-Ji2" secondAttribute="bottom" constant="4" id="lmg-Ra-ImC"/>
                     <constraint firstItem="paF-qv-M91" firstAttribute="leading" secondItem="nHE-Pf-3hg" secondAttribute="leading" constant="8" id="oCe-hI-Jdv"/>
                 </constraints>
             </tableViewCellContentView>

@@ -23,16 +23,27 @@ final class GlobalViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTopBar()
         configureTableView()
         fetchInformation()
     }
     
     
     // MARK: - Private Functions
+    private func configureTopBar() {
+        navigationItem.title = "Global Coronavirus Information"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshData))
+    }
+    
+    @objc private func refreshData() {
+        fetchInformation()
+    }
+    
     private func configureTableView() {
         tableView.register(UINib(nibName: GlobalCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: GlobalCell.cellIdentifier)
         tableView.delegate = delegate
         tableView.dataSource = delegate
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
     
     private func fetchInformation() {

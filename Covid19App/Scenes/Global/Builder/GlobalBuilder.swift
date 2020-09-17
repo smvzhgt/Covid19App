@@ -31,7 +31,7 @@ final class GlobalBuilder: ModuleBuilder {
         
         presenter.view = controller
         
-        return controller
+        return UINavigationController(rootViewController: controller)
     }
     
 }
