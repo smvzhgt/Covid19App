@@ -38,6 +38,7 @@
 		0CA394EA251248810083897E /* CaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394E9251248810083897E /* CaseService.swift */; };
 		0CA394EC25124A0B0083897E /* AllCasesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394EB25124A0B0083897E /* AllCasesRequest.swift */; };
 		0CA394EE25124C900083897E /* CountiesCasesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394ED25124C900083897E /* CountiesCasesRequest.swift */; };
+		0CC832A82513AD9500DE4F74 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC832A72513AD9500DE4F74 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		0CA394E9251248810083897E /* CaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseService.swift; sourceTree = "<group>"; };
 		0CA394EB25124A0B0083897E /* AllCasesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCasesRequest.swift; sourceTree = "<group>"; };
 		0CA394ED25124C900083897E /* CountiesCasesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesCasesRequest.swift; sourceTree = "<group>"; };
+		0CC832A72513AD9500DE4F74 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		0CA394A9251225D00083897E /* Covid19App */ = {
 			isa = PBXGroup;
 			children = (
+				0CC832A62513AD7E00DE4F74 /* Extensions */,
 				0CA394E8251248670083897E /* Services */,
 				0CA394C4251229AA0083897E /* Data */,
 				0CA394C32512299B0083897E /* Common */,
@@ -278,6 +281,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		0CC832A62513AD7E00DE4F74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0CC832A72513AD9500DE4F74 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,6 +384,7 @@
 				0CA394D725122A230083897E /* HTTPMethod.swift in Sources */,
 				0CA394E5251245280083897E /* CaseModel.swift in Sources */,
 				0C22E7792512AA8E000773FD /* GlobalTableViewDelegate.swift in Sources */,
+				0CC832A82513AD9500DE4F74 /* UIViewController+Extensions.swift in Sources */,
 				0CA394D225122A230083897E /* UrlBuilder.swift in Sources */,
 				0CA394D425122A230083897E /* APIRequest.swift in Sources */,
 				0CA394AD251225D00083897E /* SceneDelegate.swift in Sources */,
