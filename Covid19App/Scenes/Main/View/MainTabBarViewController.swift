@@ -34,7 +34,7 @@ final class MainTabBarViewController: UITabBarController {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         
         // Global
-        let globalViewController = storyboard.instantiateViewController(identifier: "GlobalViewController") as! GlobalViewController
+        let globalViewController = GlobalBuilder().build()
         let globalItem = UITabBarItem()
         globalItem.title = "Global"
         globalItem.image = UIImage(systemName: "globe")

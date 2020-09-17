@@ -8,20 +8,11 @@
 
 import UIKit
 
-class GlobalViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-
-}
-
 class CountriesViewController: UIViewController {
 
+    // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 
 }

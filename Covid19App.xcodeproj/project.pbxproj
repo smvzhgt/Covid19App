@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C22E7642512A05C000773FD /* GlobalFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7632512A05C000773FD /* GlobalFlow.swift */; };
+		0C22E7662512A072000773FD /* GlobalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7652512A072000773FD /* GlobalProtocol.swift */; };
+		0C22E7682512A093000773FD /* GlobalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7672512A093000773FD /* GlobalBuilder.swift */; };
+		0C22E76A2512A2B7000773FD /* GlobalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7692512A2B7000773FD /* GlobalInteractor.swift */; };
+		0C22E76C2512A344000773FD /* GlobalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E76B2512A344000773FD /* GlobalPresenter.swift */; };
+		0C22E76E2512A44B000773FD /* GlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E76D2512A44B000773FD /* GlobalViewController.swift */; };
+		0C22E7702512A51E000773FD /* Global.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C22E76F2512A51E000773FD /* Global.storyboard */; };
+		0C22E7732512A609000773FD /* GlobalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7722512A609000773FD /* GlobalCell.swift */; };
+		0C22E7752512A674000773FD /* GlobalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C22E7742512A674000773FD /* GlobalCell.xib */; };
+		0C22E7792512AA8E000773FD /* GlobalTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7782512AA8E000773FD /* GlobalTableViewDelegate.swift */; };
 		0CA394AB251225D00083897E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394AA251225D00083897E /* AppDelegate.swift */; };
 		0CA394AD251225D00083897E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394AC251225D00083897E /* SceneDelegate.swift */; };
 		0CA394AF251225D00083897E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394AE251225D00083897E /* ViewController.swift */; };
@@ -31,6 +41,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C22E7632512A05C000773FD /* GlobalFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFlow.swift; sourceTree = "<group>"; };
+		0C22E7652512A072000773FD /* GlobalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProtocol.swift; sourceTree = "<group>"; };
+		0C22E7672512A093000773FD /* GlobalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalBuilder.swift; sourceTree = "<group>"; };
+		0C22E7692512A2B7000773FD /* GlobalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalInteractor.swift; sourceTree = "<group>"; };
+		0C22E76B2512A344000773FD /* GlobalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPresenter.swift; sourceTree = "<group>"; };
+		0C22E76D2512A44B000773FD /* GlobalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewController.swift; sourceTree = "<group>"; };
+		0C22E76F2512A51E000773FD /* Global.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Global.storyboard; sourceTree = "<group>"; };
+		0C22E7722512A609000773FD /* GlobalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCell.swift; sourceTree = "<group>"; };
+		0C22E7742512A674000773FD /* GlobalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlobalCell.xib; sourceTree = "<group>"; };
+		0C22E7782512AA8E000773FD /* GlobalTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTableViewDelegate.swift; sourceTree = "<group>"; };
 		0CA394A7251225D00083897E /* Covid19App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA394AA251225D00083897E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CA394AC251225D00083897E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +87,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C22E75E25129FF4000773FD /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				0C22E7622512A043000773FD /* View */,
+				0C22E7612512A036000773FD /* Presentation Logic */,
+				0C22E7602512A025000773FD /* Business Logic */,
+				0C22E75F2512A01A000773FD /* Builder */,
+				0C22E7632512A05C000773FD /* GlobalFlow.swift */,
+				0C22E7652512A072000773FD /* GlobalProtocol.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		0C22E75F2512A01A000773FD /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0C22E7672512A093000773FD /* GlobalBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		0C22E7602512A025000773FD /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				0C22E7692512A2B7000773FD /* GlobalInteractor.swift */,
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		0C22E7612512A036000773FD /* Presentation Logic */ = {
+			isa = PBXGroup;
+			children = (
+				0C22E76B2512A344000773FD /* GlobalPresenter.swift */,
+			);
+			path = "Presentation Logic";
+			sourceTree = "<group>";
+		};
+		0C22E7622512A043000773FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C22E7712512A5E5000773FD /* Cell */,
+				0C22E76D2512A44B000773FD /* GlobalViewController.swift */,
+				0C22E76F2512A51E000773FD /* Global.storyboard */,
+				0C22E7782512AA8E000773FD /* GlobalTableViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C22E7712512A5E5000773FD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0C22E7722512A609000773FD /* GlobalCell.swift */,
+				0C22E7742512A674000773FD /* GlobalCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		0CA3949E251225D00083897E = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +198,7 @@
 		0CA394C1251229810083897E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0C22E75E25129FF4000773FD /* Global */,
 				0CA394D825123B310083897E /* Main */,
 			);
 			path = Scenes;
@@ -259,7 +337,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CA394B7251225D20083897E /* LaunchScreen.storyboard in Resources */,
+				0C22E7702512A51E000773FD /* Global.storyboard in Resources */,
 				0CA394B4251225D20083897E /* Assets.xcassets in Resources */,
+				0C22E7752512A674000773FD /* GlobalCell.xib in Resources */,
 				0CA394B2251225D00083897E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,17 +354,25 @@
 				0CA394AF251225D00083897E /* ViewController.swift in Sources */,
 				0CA394AB251225D00083897E /* AppDelegate.swift in Sources */,
 				0CA394D325122A230083897E /* APIClient.swift in Sources */,
+				0C22E76A2512A2B7000773FD /* GlobalInteractor.swift in Sources */,
+				0C22E7732512A609000773FD /* GlobalCell.swift in Sources */,
+				0C22E76C2512A344000773FD /* GlobalPresenter.swift in Sources */,
 				0CA394DE25123C070083897E /* MainBuilder.swift in Sources */,
 				0CA394E7251247B50083897E /* GlobalCasesModel.swift in Sources */,
 				0CA394D625122A230083897E /* RequestExecutor.swift in Sources */,
+				0C22E7642512A05C000773FD /* GlobalFlow.swift in Sources */,
 				0CA394D525122A230083897E /* CommonError.swift in Sources */,
 				0CA394D125122A230083897E /* Endpoint.swift in Sources */,
 				0CA394EC25124A0B0083897E /* AllCasesRequest.swift in Sources */,
+				0C22E7662512A072000773FD /* GlobalProtocol.swift in Sources */,
+				0C22E76E2512A44B000773FD /* GlobalViewController.swift in Sources */,
 				0CA394E325123C5A0083897E /* MainTabBarViewController.swift in Sources */,
+				0C22E7682512A093000773FD /* GlobalBuilder.swift in Sources */,
 				0CA394EE25124C900083897E /* CountiesCasesRequest.swift in Sources */,
 				0CA394EA251248810083897E /* CaseService.swift in Sources */,
 				0CA394D725122A230083897E /* HTTPMethod.swift in Sources */,
 				0CA394E5251245280083897E /* CaseModel.swift in Sources */,
+				0C22E7792512AA8E000773FD /* GlobalTableViewDelegate.swift in Sources */,
 				0CA394D225122A230083897E /* UrlBuilder.swift in Sources */,
 				0CA394D425122A230083897E /* APIRequest.swift in Sources */,
 				0CA394AD251225D00083897E /* SceneDelegate.swift in Sources */,
