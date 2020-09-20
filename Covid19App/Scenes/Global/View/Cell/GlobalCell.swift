@@ -16,9 +16,9 @@ class GlobalCell: UITableViewCell {
     
     
     // MARK: - Outlets
-    @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var category: UILabel!
     @IBOutlet private weak var value: UILabel!
+    @IBOutlet private weak var containerView: UIView!
     
     
     // MARK: Lifecycles
@@ -26,6 +26,12 @@ class GlobalCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
+        containerView.layer.masksToBounds = false
+        containerView.layer.cornerRadius = 12
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOffset = CGSize(width: -1, height: 2)
+        containerView.layer.shadowRadius = 3
+        containerView.layer.shadowOpacity = 0.3
     }
     
 }
@@ -34,7 +40,6 @@ class GlobalCell: UITableViewCell {
 // MARK: - Extensions
 extension GlobalCell {
     func fill(model: Global.GlobalPresentationModel) {
-        self.title.text = model.title
         self.category.text = model.category
         self.value.text = "\(model.value)"
     }

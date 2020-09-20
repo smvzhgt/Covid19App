@@ -16,9 +16,9 @@ final class GlobalPresenter {
     
     // MARK: - Private Functions
     private func buildPresentationModels(model: GlobalCasesModel) -> [Global.GlobalPresentationModel] {
-        let casesModel = Global.GlobalPresentationModel(title: "Global", category: "Coronavirus cases", value: model.cases)
-        let deathsModel = Global.GlobalPresentationModel(title: "Global", category: "Deaths", value: model.deaths)
-        let recoveredModel = Global.GlobalPresentationModel(title: "Global", category: "Recovered", value: model.recovered)
+        let casesModel = Global.GlobalPresentationModel(category: "Coronavirus cases", value: model.cases)
+        let deathsModel = Global.GlobalPresentationModel(category: "Deaths", value: model.deaths)
+        let recoveredModel = Global.GlobalPresentationModel(category: "Recovered", value: model.recovered)
         return [casesModel, deathsModel, recoveredModel]
     }
     
