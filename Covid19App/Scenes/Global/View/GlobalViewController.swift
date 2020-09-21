@@ -31,7 +31,7 @@ final class GlobalViewController: BaseViewController {
     
     // MARK: - Private Functions
     private func configureTopBar() {
-        navigationItem.title = "Global Coronavirus Information"
+        navigationItem.title = "World Coronavirus Information"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshData))
     }
     

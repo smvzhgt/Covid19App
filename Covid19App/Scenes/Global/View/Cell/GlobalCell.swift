@@ -41,13 +41,7 @@ class GlobalCell: UITableViewCell {
 extension GlobalCell {
     func fill(model: Global.GlobalPresentationModel) {
         self.category.text = model.category
-        
-        let valueFormatter = NumberFormatter()
-        valueFormatter.numberStyle = NumberFormatter.Style.decimal
-        valueFormatter.groupingSeparator = ","
-        let formattedValue = valueFormatter.string(from: NSNumber(value:model.value))
-        
-        self.value.text = formattedValue
+        self.value.text = model.value
     }
     
 }

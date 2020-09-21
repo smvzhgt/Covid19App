@@ -24,7 +24,7 @@ enum Global {
     
     struct GlobalPresentationModel {
         var category: String
-        var value: Int
+        var value: String?
     }
     
 }

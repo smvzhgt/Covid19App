@@ -16,10 +16,17 @@ final class GlobalPresenter {
     
     // MARK: - Private Functions
     private func buildPresentationModels(model: GlobalCasesModel) -> [Global.GlobalPresentationModel] {
-        let casesModel = Global.GlobalPresentationModel(category: "Coronavirus cases", value: model.cases)
-        let deathsModel = Global.GlobalPresentationModel(category: "Deaths", value: model.deaths)
-        let recoveredModel = Global.GlobalPresentationModel(category: "Recovered", value: model.recovered)
+        let casesModel = Global.GlobalPresentationModel(category: "Coronavirus cases", value: formatValue(value: model.cases))
+        let deathsModel = Global.GlobalPresentationModel(category: "Deaths", value: formatValue(value: model.deaths))
+        let recoveredModel = Global.GlobalPresentationModel(category: "Recovered", value: formatValue(value: model.recovered))
         return [casesModel, deathsModel, recoveredModel]
+    }
+    
+    private func formatValue(value: Int) -> String? {
+        let valueFormatter = NumberFormatter()
+        valueFormatter.numberStyle = NumberFormatter.Style.decimal
+        valueFormatter.groupingSeparator = ","
+        return valueFormatter.string(from: NSNumber(value:value))
     }
     
 }
