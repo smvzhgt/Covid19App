@@ -9,9 +9,9 @@
 import Foundation
 
 final class GlobalCasesModel: Codable {
-    var cases: Int
-    var deaths: Int
-    var recovered: Int
+    var cases: Int?
+    var deaths: Int?
+    var recovered: Int?
     
     init(cases: Int,
          deaths: Int,

@@ -30,9 +30,7 @@ final class MainTabBarViewController: UITabBarController {
     
     // MARK: - Private Functions
     func setupUI() {
-    
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        
+            
         // Global
         let globalViewController = GlobalBuilder().build()
         let globalItem = UITabBarItem()
@@ -41,7 +39,7 @@ final class MainTabBarViewController: UITabBarController {
         globalViewController.tabBarItem = globalItem
         
         // By country
-        let countriesViewController = storyboard.instantiateViewController(identifier: "CountriesViewController") as! CountriesViewController
+        let countriesViewController = CountriesBuilder().build()
         let countriesItem = UITabBarItem()
         countriesItem.title = "Countries"
         countriesItem.image = UIImage(systemName: "flag")

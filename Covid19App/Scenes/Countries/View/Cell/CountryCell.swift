@@ -1,24 +1,26 @@
 //
-//  GlobalCell.swift
+//  CountryCell.swift
 //  Covid19App
 //
-//  Created by oleg on 16.09.2020.
+//  Created by oleg on 21.09.2020.
 //  Copyright © 2020 covid19app. All rights reserved.
 //
 
 import UIKit
 
-class GlobalCell: UITableViewCell {
+class CountryCell: UITableViewCell {
     
     // MARK: - Public Properties
-    static let cellHeight: CGFloat = 97
-    static let cellIdentifier: String = "GlobalCell"
+    static let cellHeight: CGFloat = 130
+    static let cellIdentifier: String = "CountryCell"
     
     
     // MARK: - Outlets
     @IBOutlet private weak var containerView: UIView!
-    @IBOutlet private weak var category: UILabel!
-    @IBOutlet private weak var value: UILabel!
+    @IBOutlet private weak var country: UILabel!
+    @IBOutlet private weak var cases: UILabel!
+    @IBOutlet private weak var death: UILabel!
+    @IBOutlet private weak var recovered: UILabel!
     
     
     // MARK: Lifecycles
@@ -38,10 +40,12 @@ class GlobalCell: UITableViewCell {
 
 
 // MARK: - Extensions
-extension GlobalCell {
-    func fill(model: Global.GlobalPresentationModel) {
-        self.category.text = model.category
-        self.value.text = model.value
+extension CountryCell {
+    func fill(model: Countries.CountryPresentationModel) {
+        self.country.text = model.country
+        self.cases.text = model.cases
+        self.death.text = model.death
+        self.recovered.text = model.recovered
     }
     
 }

@@ -9,18 +9,18 @@
 import Foundation
 
 final class CaseModel: Codable {
-    var country: String
-    var cases: Int
-    var todayCases: Int
-    var deaths: Int
-    var todayDeaths: Int
-    var recovered: Int
-    var active: Int
-    var critical: Int
-    var casesPerOneMillion: Int
-    var deathsPerOneMillion: Int
-    var totalTests: Int
-    var testsPerOneMillion: Int
+    var country: String?
+    var cases: Int?
+    var todayCases: Int?
+    var deaths: Int?
+    var todayDeaths: Int?
+    var recovered: Int?
+    var active: Int?
+    var critical: Int?
+    var casesPerOneMillion: Int?
+    var deathsPerOneMillion: Int?
+    var totalTests: Int?
+    var testsPerOneMillion: Int?
     
     init(country: String,
          cases: Int,
