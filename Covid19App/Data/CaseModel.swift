@@ -8,19 +8,19 @@
 
 import Foundation
 
-final class CaseModel: Codable {
-    var country: String?
-    var cases: Int?
-    var todayCases: Int?
-    var deaths: Int?
-    var todayDeaths: Int?
-    var recovered: Int?
-    var active: Int?
-    var critical: Int?
-    var casesPerOneMillion: Int?
-    var deathsPerOneMillion: Int?
-    var totalTests: Int?
-    var testsPerOneMillion: Int?
+final class CaseModel: Decodable {
+    let country: String?
+    let cases: Int?
+    let todayCases: Int?
+    let deaths: Int?
+    let todayDeaths: Int?
+    let recovered: Int?
+    let active: Int?
+    let critical: Int?
+    let casesPerOneMillion: Int?
+    let deathsPerOneMillion: Int?
+    let totalTests: Int?
+    let testsPerOneMillion: Int?
     
     init(country: String,
          cases: Int,

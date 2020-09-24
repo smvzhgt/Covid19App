@@ -33,8 +33,9 @@ enum Countries {
 extension Countries.CountryPresentationModel {
     init(caseModel: CaseModel) {
         self.country = caseModel.country
-        self.cases = "Cases: \(caseModel.cases ?? 0) | Today:\(caseModel.todayCases ?? 0) | Active:\(caseModel.active ?? 0)"
-        self.death = "Death: \(caseModel.deaths ?? 0) | Today:\(caseModel.todayDeaths ?? 0)"
-        self.recovered = "Recovered: \(caseModel.recovered ?? 0) | Critical:\(caseModel.critical ?? 0)"
+        self.cases = "Cases: \(FormatUtil.formatValue(value: caseModel.cases) ?? "") | Today: \(FormatUtil.formatValue(value: caseModel.todayCases) ?? "") | Active: \(FormatUtil.formatValue(value: caseModel.active) ?? "")"
+        self.death = "Death: \(FormatUtil.formatValue(value: caseModel.deaths) ?? "") | Today: \(FormatUtil.formatValue(value: caseModel.todayDeaths) ?? "")"
+        self.recovered = "Recovered: \(FormatUtil.formatValue(value: caseModel.recovered) ?? "") | Critical: \(FormatUtil.formatValue(value: caseModel.critical) ?? "")"
     }
+    
 }

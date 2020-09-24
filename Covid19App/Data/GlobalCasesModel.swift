@@ -8,10 +8,10 @@
 
 import Foundation
 
-final class GlobalCasesModel: Codable {
-    var cases: Int?
-    var deaths: Int?
-    var recovered: Int?
+final class GlobalCasesModel: Decodable {
+    let cases: Int?
+    let deaths: Int?
+    let recovered: Int?
     
     init(cases: Int,
          deaths: Int,

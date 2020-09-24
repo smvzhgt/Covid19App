@@ -10,19 +10,25 @@ import Foundation
 import Combine
 
 protocol RequestExecutorProtocol {
-    func execute<T: Codable>(with urlRequest: URLRequest, completion: @escaping((Result<T, CommonError>) -> Void))
+    func execute<T: Decodable>(with urlRequest: URLRequest, completion: @escaping((Result<T, CommonError>) -> Void))
 }
 
 
 final class RequestExecutor {
-    private let urlSession = URLSession.shared
+    private let urlSession: URLSession
+    
+    init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.httpMaximumConnectionsPerHost = 5
+        urlSession = URLSession(configuration: configuration)
+    }
 }
 
 
 // MARK: - Extension
 extension RequestExecutor: RequestExecutorProtocol {
     
-    func execute<T: Codable>(with urlRequest: URLRequest, completion: @escaping ((Result<T, CommonError>) -> Void)) {
+    func execute<T: Decodable>(with urlRequest: URLRequest, completion: @escaping ((Result<T, CommonError>) -> Void)) {
         
         let task = urlSession.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
@@ -47,6 +53,8 @@ extension RequestExecutor: RequestExecutorProtocol {
             
             do {
                 let decoder: JSONDecoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .secondsSince1970
                 let resultData = try decoder.decode(T.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(resultData))

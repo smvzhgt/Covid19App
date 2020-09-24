@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C100F2A251CC53400AD8F34 /* FormatUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C100F29251CC53400AD8F34 /* FormatUtil.swift */; };
 		0C22E7642512A05C000773FD /* GlobalFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7632512A05C000773FD /* GlobalFlow.swift */; };
 		0C22E7662512A072000773FD /* GlobalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7652512A072000773FD /* GlobalProtocol.swift */; };
 		0C22E7682512A093000773FD /* GlobalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22E7672512A093000773FD /* GlobalBuilder.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C100F29251CC53400AD8F34 /* FormatUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatUtil.swift; sourceTree = "<group>"; };
 		0C22E7632512A05C000773FD /* GlobalFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFlow.swift; sourceTree = "<group>"; };
 		0C22E7652512A072000773FD /* GlobalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProtocol.swift; sourceTree = "<group>"; };
 		0C22E7672512A093000773FD /* GlobalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalBuilder.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			children = (
 				0CA394DF25123C2E0083897E /* ModuleBuilder.swift */,
 				0CC832A92513AE1300DE4F74 /* BaseViewController.swift */,
+				0C100F29251CC53400AD8F34 /* FormatUtil.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				0C22E7642512A05C000773FD /* GlobalFlow.swift in Sources */,
 				0CA394D525122A230083897E /* CommonError.swift in Sources */,
 				0C59AE5D2518F0C900127770 /* CountriesTableViewDelegate.swift in Sources */,
+				0C100F2A251CC53400AD8F34 /* FormatUtil.swift in Sources */,
 				0CA394D125122A230083897E /* Endpoint.swift in Sources */,
 				0CA394EC25124A0B0083897E /* AllCasesRequest.swift in Sources */,
 				0C22E7662512A072000773FD /* GlobalProtocol.swift in Sources */,
