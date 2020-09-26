@@ -11,7 +11,7 @@ import UIKit
 class CountryCell: UITableViewCell {
     
     // MARK: - Public Properties
-    static let cellHeight: CGFloat = 130
+    static let cellHeight: CGFloat = 200
     static let cellIdentifier: String = "CountryCell"
     
     
@@ -19,8 +19,11 @@ class CountryCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var country: UILabel!
     @IBOutlet private weak var cases: UILabel!
+    @IBOutlet private weak var today: UILabel!
     @IBOutlet private weak var death: UILabel!
+    @IBOutlet private weak var deathToday: UILabel!
     @IBOutlet private weak var recovered: UILabel!
+    @IBOutlet private weak var recoveredCritical: UILabel!
     
     
     // MARK: Lifecycles
@@ -44,8 +47,11 @@ extension CountryCell {
     func fill(model: Countries.CountryPresentationModel) {
         self.country.text = model.country
         self.cases.text = model.cases
+        self.today.text = model.today
         self.death.text = model.death
+        self.deathToday.text = model.deathToday
         self.recovered.text = model.recovered
+        self.recoveredCritical.text = model.recoveredCritical
     }
     
 }

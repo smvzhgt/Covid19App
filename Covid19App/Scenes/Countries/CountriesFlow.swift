@@ -25,17 +25,23 @@ enum Countries {
     struct CountryPresentationModel {
         var country: String?
         var cases: String?
+        var today: String?
         var death: String?
+        var deathToday: String?
         var recovered: String?
+        var recoveredCritical: String?
     }
 }
 
 extension Countries.CountryPresentationModel {
     init(caseModel: CaseModel) {
         self.country = caseModel.country
-        self.cases = "Cases: \(FormatUtil.formatValue(value: caseModel.cases) ?? "") | Today: \(FormatUtil.formatValue(value: caseModel.todayCases) ?? "") | Active: \(FormatUtil.formatValue(value: caseModel.active) ?? "")"
-        self.death = "Death: \(FormatUtil.formatValue(value: caseModel.deaths) ?? "") | Today: \(FormatUtil.formatValue(value: caseModel.todayDeaths) ?? "")"
-        self.recovered = "Recovered: \(FormatUtil.formatValue(value: caseModel.recovered) ?? "") | Critical: \(FormatUtil.formatValue(value: caseModel.critical) ?? "")"
+        self.cases = "Cases: \(FormatUtil.formatValue(value: caseModel.cases) ?? "")"
+        self.today = "Today: \(FormatUtil.formatValue(value: caseModel.todayCases) ?? "") | Active: \(FormatUtil.formatValue(value: caseModel.active) ?? "")"
+        self.death = "Death: \(FormatUtil.formatValue(value: caseModel.deaths) ?? "")"
+        self.deathToday = "Today: \(FormatUtil.formatValue(value: caseModel.todayDeaths) ?? "")"
+        self.recovered = "Recovered: \(FormatUtil.formatValue(value: caseModel.recovered) ?? "")"
+        self.recoveredCritical = "Critical: \(FormatUtil.formatValue(value: caseModel.critical) ?? "")"
     }
     
 }
