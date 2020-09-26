@@ -23,8 +23,8 @@ enum Global {
     }
     
     struct GlobalPresentationModel {
-        var category: String?
-        var value: String?
+        let category: String?
+        let value: String?
     }
     
 }

@@ -23,13 +23,13 @@ enum Countries {
     }
     
     struct CountryPresentationModel {
-        var country: String?
-        var cases: String?
-        var today: String?
-        var death: String?
-        var deathToday: String?
-        var recovered: String?
-        var recoveredCritical: String?
+        let country: String?
+        let cases: String?
+        let today: String?
+        let death: String?
+        let deathToday: String?
+        let recovered: String?
+        let recoveredCritical: String?
     }
 }
 
