@@ -22,7 +22,9 @@ final class CountriesBuilder: ModuleBuilder {
         
         // View
         let storyboard = UIStoryboard.init(name: "Countries", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "CountriesViewController") as! CountriesViewController
+        guard let controller = storyboard.instantiateViewController(identifier: "CountriesViewController") as? CountriesViewController else {
+            return UIViewController()
+        }
         
         let tableViewDelegate = CountriesTableViewDelegate()
         

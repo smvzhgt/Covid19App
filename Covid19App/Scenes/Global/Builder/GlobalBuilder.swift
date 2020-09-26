@@ -22,7 +22,9 @@ final class GlobalBuilder: ModuleBuilder {
         
         // View
         let storyboard = UIStoryboard.init(name: "Global", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "GlobalViewController") as! GlobalViewController
+        guard let controller = storyboard.instantiateViewController(identifier: "GlobalViewController") as? GlobalViewController else {
+            return UIViewController()
+        }
         
         let tableViewDelegate = GlobalTableViewDelegate()
         
