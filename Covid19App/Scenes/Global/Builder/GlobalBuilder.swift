@@ -25,10 +25,7 @@ final class GlobalBuilder: ModuleBuilder {
         guard let controller = storyboard.instantiateViewController(identifier: "GlobalViewController") as? GlobalViewController else {
             return UIViewController()
         }
-        
-        let tableViewDelegate = GlobalTableViewDelegate()
-        
-        controller.delegate = tableViewDelegate
+                
         controller.interactor = interactor
         
         presenter.view = controller

@@ -12,11 +12,11 @@ final class GlobalViewController: BaseViewController {
     
     // MARK: - Public Properties
     var interactor: GlobalInteractorProtocol!
-    var delegate: GlobalTableViewDelegate!
+    var delegate: GlobalTableViewDelegate?
     
     
     // MARK: - IBOutlets
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet public weak var tableView: UITableView!
     
     
     // MARK: - Lifecycles
@@ -28,8 +28,22 @@ final class GlobalViewController: BaseViewController {
         fetchInformation()
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setupDelegate()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+      setupDelegate()
+    }
+    
     
     // MARK: - Private Functions
+    private func setupDelegate() {
+        delegate = GlobalTableViewDelegate()
+    }
+    
     private func configureTopBar() {
         navigationItem.title = "World Coronavirus Information"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshData))
@@ -62,7 +76,7 @@ extension GlobalViewController: GlobalViewProtocol {
         if let error = viewModel.error {
             showWarningDialog(message: error.localizedDescription)
         } else {
-            delegate.dataSource = viewModel.models
+            delegate?.dataSource = viewModel.models
             tableView.reloadData()
         }
     }

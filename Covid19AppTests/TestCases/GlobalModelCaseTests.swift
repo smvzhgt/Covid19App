@@ -15,6 +15,7 @@ class GlobalModelCaseTests: XCTestCase {
     var model: GlobalCasesModel!
 
 
+    // MARK: - Lifecycle
     override func setUpWithError() throws {
         let data = readFile(name: "globalcase", extension: "json")
         let decoder = JSONDecoder()
@@ -27,7 +28,7 @@ class GlobalModelCaseTests: XCTestCase {
     }
 
 
-    // MARK: - Test Cases
+    // MARK: - Public Methods
     func testData_Model() {
         XCTAssertNotNil(model)
     }
