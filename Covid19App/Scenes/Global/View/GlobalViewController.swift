@@ -12,11 +12,26 @@ final class GlobalViewController: BaseViewController {
     
     // MARK: - Public Properties
     var interactor: GlobalInteractorProtocol!
-    var delegate: GlobalTableViewDelegate?
+    
+    
+    // MARK: - Private Properties
+    private var tableViewDelegate: GlobalTableViewDelegate?
     
     
     // MARK: - IBOutlets
     @IBOutlet public weak var tableView: UITableView!
+    
+    
+    // MARK: - Initializers
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setupDependency()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupDependency()
+    }
     
     
     // MARK: - Lifecycles
@@ -28,20 +43,10 @@ final class GlobalViewController: BaseViewController {
         fetchInformation()
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setupDelegate()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-      super.init(coder: aDecoder)
-      setupDelegate()
-    }
-    
     
     // MARK: - Private Functions
-    private func setupDelegate() {
-        delegate = GlobalTableViewDelegate()
+    private func setupDependency() {
+        self.tableViewDelegate = GlobalTableViewDelegate()
     }
     
     private func configureTopBar() {
@@ -55,8 +60,8 @@ final class GlobalViewController: BaseViewController {
     
     private func configureTableView() {
         tableView.register(UINib(nibName: GlobalCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: GlobalCell.cellIdentifier)
-        tableView.delegate = delegate
-        tableView.dataSource = delegate
+        tableView.delegate = tableViewDelegate
+        tableView.dataSource = tableViewDelegate
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
     
@@ -76,7 +81,7 @@ extension GlobalViewController: GlobalViewProtocol {
         if let error = viewModel.error {
             showWarningDialog(message: error.localizedDescription)
         } else {
-            delegate?.dataSource = viewModel.models
+            tableViewDelegate?.dataSource = viewModel.models
             tableView.reloadData()
         }
     }

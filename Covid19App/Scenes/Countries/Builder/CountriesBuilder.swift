@@ -26,9 +26,6 @@ final class CountriesBuilder: ModuleBuilder {
             return UIViewController()
         }
         
-        let tableViewDelegate = CountriesTableViewDelegate()
-        
-        controller.delegate = tableViewDelegate
         controller.interactor = interactor
         
         presenter.view = controller
