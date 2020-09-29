@@ -8,7 +8,8 @@
 
 import Foundation
 
-final class GlobalCasesModel: Decodable {
+final class GlobalCasesModel: Decodable, Equatable {
+    
     let cases: Int?
     let deaths: Int?
     let recovered: Int?
@@ -19,5 +20,11 @@ final class GlobalCasesModel: Decodable {
         self.cases = cases
         self.deaths = deaths
         self.recovered = recovered
+    }
+    
+    static func == (lhs: GlobalCasesModel, rhs: GlobalCasesModel) -> Bool {
+        return lhs.cases == rhs.cases
+            && lhs.deaths == rhs.deaths
+            && lhs.recovered == rhs.recovered
     }
 }

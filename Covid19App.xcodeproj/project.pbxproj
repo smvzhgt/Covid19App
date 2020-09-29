@@ -59,6 +59,8 @@
 		0CD9F8862520CA22004DB703 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9F8852520CA22004DB703 /* XCTestCase.swift */; };
 		0CD9F88C2520CACC004DB703 /* globalcase.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CD9F88B2520CACC004DB703 /* globalcase.json */; };
 		0CD9F8902520CB14004DB703 /* GlobalModelCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD9F88F2520CB14004DB703 /* GlobalModelCaseTests.swift */; };
+		0CE3490725237EF00051B70A /* GlobalPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE3490625237EF00051B70A /* GlobalPresenterSpy.swift */; };
+		0CE3490D252380220051B70A /* CaseServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE3490C252380220051B70A /* CaseServiceSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		0CD9F88B2520CACC004DB703 /* globalcase.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = globalcase.json; sourceTree = "<group>"; };
 		0CD9F88F2520CB14004DB703 /* GlobalModelCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalModelCaseTests.swift; sourceTree = "<group>"; };
 		0CD9F8932520CE55004DB703 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CE3490625237EF00051B70A /* GlobalPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPresenterSpy.swift; sourceTree = "<group>"; };
+		0CE3490C252380220051B70A /* CaseServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseServiceSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +322,8 @@
 			children = (
 				0C6707C62522084400156C29 /* GlobalInteractorProtocolSpy.swift */,
 				0C6707CA2522116800156C29 /* TableViewSpy.swift */,
+				0CE3490625237EF00051B70A /* GlobalPresenterSpy.swift */,
+				0CE3490C252380220051B70A /* CaseServiceSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -691,7 +697,9 @@
 				0CD9F8862520CA22004DB703 /* XCTestCase.swift in Sources */,
 				0C6707BC252205DC00156C29 /* GlobalViewControllerTest.swift in Sources */,
 				0C6707B8252205C600156C29 /* GlobalPresenterTest.swift in Sources */,
+				0CE3490D252380220051B70A /* CaseServiceSpy.swift in Sources */,
 				0C6707B2252205B200156C29 /* GlobalInteractorTest.swift in Sources */,
+				0CE3490725237EF00051B70A /* GlobalPresenterSpy.swift in Sources */,
 				0C6707C72522084400156C29 /* GlobalInteractorProtocolSpy.swift in Sources */,
 				0C6707CB2522116800156C29 /* TableViewSpy.swift in Sources */,
 				0CD9F8902520CB14004DB703 /* GlobalModelCaseTests.swift in Sources */,
