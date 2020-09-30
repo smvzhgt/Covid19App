@@ -12,15 +12,16 @@ import XCTest
 final class GlobalInteractorTest: XCTestCase {
     
     // MARK: - Private Properties
-    private var sut: GlobalInteractorProtocol!
+    private var sut: GlobalInteractor!
     private var globalPresenter: GlobalPresenterSpy!
     private var caseService: CaseServiceSpy!
     
     
     // MARK: - Lifecycle
     override func setUpWithError() throws {
-        let presenter = GlobalPresenterSpy()
-        let service = CaseServiceSpy()
+        let presenter = GlobalPresenterSpy(globalCaseModel: Seeds.globalCaseModel)
+        let service = CaseServiceSpy(globalCaseModel: Seeds.globalCaseModel,
+                                     caseModels: Seeds.caseModels)
         let interactor = GlobalInteractor(presenter: presenter, service: service)
         
         sut = interactor
@@ -35,8 +36,8 @@ final class GlobalInteractorTest: XCTestCase {
     }
     
     
-    // MARK: - Public Methods
-    func testFetchGlobalInformationCallServiceToFetch() {
+    // MARK: - Public Functions
+    func testInteractor_fetchGlobalInformation_callService() {
         // Given
         let request = Global.Fetch.Request()
         
@@ -48,7 +49,7 @@ final class GlobalInteractorTest: XCTestCase {
         
     }
     
-    func testFetchGlobalInformationCallPresenterToTransformData() {
+    func testInteractor_fetchGlobalInformation_callPresenter() {
         // Given
         let request = Global.Fetch.Request()
         
@@ -57,6 +58,17 @@ final class GlobalInteractorTest: XCTestCase {
         
         // Then
         XCTAssertTrue(globalPresenter.isCalledPresentFetchedGlobalInformation, "Not started globalPresenter.presentFetchGlobalInformation(:)")
+    }
+    
+    func testInteractor_fetchGlobalInformation_callPresenter_theSameResult() {
+        // Given
+        let request = Global.Fetch.Request()
+        
+        // When
+        sut.fetchGlobalInformation(request: request)
+        
+        // Then
+        XCTAssertEqual(globalPresenter.globalCaseModel, Seeds.globalCaseModel, "fetchGlobalInformation() should ask the presenter to format the same movies it fetched")
     }
     
 }

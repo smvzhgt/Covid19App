@@ -43,7 +43,7 @@ final class GlobalViewControllerTest: XCTestCase {
     }
     
     
-    // MARK: - Public Methods
+    // MARK: - Public Functions
     func testDidLoad() {
         sut.viewWillAppear(true)
         

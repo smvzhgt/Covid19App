@@ -33,6 +33,8 @@
 		0C6707BC252205DC00156C29 /* GlobalViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6707BB252205DC00156C29 /* GlobalViewControllerTest.swift */; };
 		0C6707C72522084400156C29 /* GlobalInteractorProtocolSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6707C62522084400156C29 /* GlobalInteractorProtocolSpy.swift */; };
 		0C6707CB2522116800156C29 /* TableViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6707CA2522116800156C29 /* TableViewSpy.swift */; };
+		0C7228D7252488A7005FC7DD /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7228D6252488A7005FC7DD /* Seeds.swift */; };
+		0C7228DB25248E6E005FC7DD /* GlobalViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7228DA25248E6E005FC7DD /* GlobalViewControllerSpy.swift */; };
 		0CA394AB251225D00083897E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394AA251225D00083897E /* AppDelegate.swift */; };
 		0CA394AD251225D00083897E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA394AC251225D00083897E /* SceneDelegate.swift */; };
 		0CA394B4251225D20083897E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA394B3251225D20083897E /* Assets.xcassets */; };
@@ -100,6 +102,8 @@
 		0C6707BB252205DC00156C29 /* GlobalViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewControllerTest.swift; sourceTree = "<group>"; };
 		0C6707C62522084400156C29 /* GlobalInteractorProtocolSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalInteractorProtocolSpy.swift; sourceTree = "<group>"; };
 		0C6707CA2522116800156C29 /* TableViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSpy.swift; sourceTree = "<group>"; };
+		0C7228D6252488A7005FC7DD /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		0C7228DA25248E6E005FC7DD /* GlobalViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewControllerSpy.swift; sourceTree = "<group>"; };
 		0CA394A7251225D00083897E /* Covid19App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA394AA251225D00083897E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CA394AC251225D00083897E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				0C6707CA2522116800156C29 /* TableViewSpy.swift */,
 				0CE3490625237EF00051B70A /* GlobalPresenterSpy.swift */,
 				0CE3490C252380220051B70A /* CaseServiceSpy.swift */,
+				0C7228D6252488A7005FC7DD /* Seeds.swift */,
+				0C7228DA25248E6E005FC7DD /* GlobalViewControllerSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -698,6 +704,8 @@
 				0C6707BC252205DC00156C29 /* GlobalViewControllerTest.swift in Sources */,
 				0C6707B8252205C600156C29 /* GlobalPresenterTest.swift in Sources */,
 				0CE3490D252380220051B70A /* CaseServiceSpy.swift in Sources */,
+				0C7228DB25248E6E005FC7DD /* GlobalViewControllerSpy.swift in Sources */,
+				0C7228D7252488A7005FC7DD /* Seeds.swift in Sources */,
 				0C6707B2252205B200156C29 /* GlobalInteractorTest.swift in Sources */,
 				0CE3490725237EF00051B70A /* GlobalPresenterSpy.swift in Sources */,
 				0C6707C72522084400156C29 /* GlobalInteractorProtocolSpy.swift in Sources */,

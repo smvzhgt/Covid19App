@@ -33,27 +33,13 @@ extension GlobalPresenter: GlobalPresenterProtocol {
     func presentFetchGlobalInformation(response: Global.Fetch.Response) {
         switch response.result {
         case .success(let model):
-            handleSuccessResult(model: model)
-        case .failure(let error):
-            handleFailureResult(error: error)
-        }
-    }
-    
-    private func handleSuccessResult(model: GlobalCasesModel) {
-        DispatchQueue.global(qos: .userInitiated).async {  [weak self] in
-            guard let `self` = self else { return }
             let presentationModels = self.buildPresentationModels(model: model)
-            DispatchQueue.main.async { [weak self] in
-                guard let `self` = self else { return }
-                let viewModel = Global.Fetch.ViewModel(models: presentationModels, error: nil)
-                self.view.displayFetchGlobalInformation(viewModel: viewModel)
-            }
+            let viewModel = Global.Fetch.ViewModel(models: presentationModels, error: nil)
+            self.view.displayFetchGlobalInformation(viewModel: viewModel)
+        case .failure(let error):
+            let viewModel = Global.Fetch.ViewModel(models: [], error: error)
+            view.displayFetchGlobalInformation(viewModel: viewModel)
         }
-    }
-    
-    private func handleFailureResult(error: CommonError) {
-        let viewModel = Global.Fetch.ViewModel(models: [], error: error)
-        view.displayFetchGlobalInformation(viewModel: viewModel)
     }
     
 }

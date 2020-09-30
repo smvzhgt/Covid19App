@@ -14,35 +14,27 @@ final class CaseServiceSpy: CaseServiceProtocol {
     // MARK: - Public Properties
     private(set) var isCalledFetchAllCases = false
     private(set) var isCalledFetchCountriesCases = false
-    let globalCaseModel = GlobalCasesModel(cases: 1000, deaths: 10, recovered: 900)
-    let caseModels = [
-        CaseModel(country: "USA", cases: 7011829, todayCases: 7061, deaths: 204181, todayDeaths: 63,
-                  recovered: 4261777, active: 2545871, critical: 14023, casesPerOneMillion: 21156,
-                  deathsPerOneMillion: 616, totalTests: 98242623, testsPerOneMillion: 296415),
-        CaseModel(country: "India", cases: 3011829, todayCases: 7061, deaths: 204181, todayDeaths: 63,
-                  recovered: 4261777, active: 2545871, critical: 14023, casesPerOneMillion: 21156,
-                  deathsPerOneMillion: 616, totalTests: 98242623, testsPerOneMillion: 296415),
-        CaseModel(country: "Brazil", cases: 7011829, todayCases: 7061, deaths: 204181, todayDeaths: 63,
-                  recovered: 4261777, active: 2545871, critical: 14023, casesPerOneMillion: 21156,
-                  deathsPerOneMillion: 616, totalTests: 98242623, testsPerOneMillion: 296415),
-        CaseModel(country: "Russia", cases: 7011829, todayCases: 7061, deaths: 204181, todayDeaths: 63,
-                  recovered: 4261777, active: 2545871, critical: 14023, casesPerOneMillion: 21156,
-                  deathsPerOneMillion: 616, totalTests: 98242623, testsPerOneMillion: 296415),
-        CaseModel(country: "Peru", cases: 7011829, todayCases: 7061, deaths: 204181, todayDeaths: 63,
-                  recovered: 4261777, active: 2545871, critical: 14023, casesPerOneMillion: 21156,
-                  deathsPerOneMillion: 616, totalTests: 98242623, testsPerOneMillion: 296415)
-    ]
+    private(set) var globalCaseModel: GlobalCasesModel
+    private(set) var caseModels: [CaseModel]
     
     
-    // MARK: - Public Methods
+    // MARK: - Initializer
+    init(globalCaseModel: GlobalCasesModel = GlobalCasesModel(cases: 0, deaths: 0, recovered: 0),
+         caseModels: [CaseModel] = []) {
+        self.globalCaseModel = globalCaseModel
+        self.caseModels = caseModels
+    }
+    
+    
+    // MARK: - Public Functions
     func fetchAllCases(completion: @escaping (Result<GlobalCasesModel, CommonError>) -> Void) {
         isCalledFetchAllCases = true
-        completion(.success(globalCaseModel))
+        completion(.success(Seeds.globalCaseModel))
     }
     
     func fetchCountriesCases(completion: @escaping (Result<[CaseModel], CommonError>) -> Void) {
         isCalledFetchCountriesCases = true
-        completion(.success(caseModels))
+        completion(.success(Seeds.caseModels))
     }
     
 }

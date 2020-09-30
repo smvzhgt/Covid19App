@@ -15,7 +15,7 @@ final class GlobalInteractorProtocolSpy: GlobalInteractorProtocol {
     private(set) var isCalledFetchGlobalInformation = false
     
     
-    // MARK: - Public Methods
+    // MARK: - Public Functions
     func fetchGlobalInformation(request: Global.Fetch.Request) {
         isCalledFetchGlobalInformation = true
     }
