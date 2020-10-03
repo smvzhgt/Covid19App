@@ -19,7 +19,7 @@ final class GlobalViewController: BaseViewController {
     
     
     // MARK: - IBOutlets
-    @IBOutlet public weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     
     // MARK: - Lifecycles

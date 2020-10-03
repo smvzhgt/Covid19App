@@ -12,11 +12,22 @@ final class CountriesTableViewDelegate: NSObject {
     
     // MARK: - Public Properties
     var dataSource: [Countries.CountryPresentationModel]
+    var isFiltering: Bool = false
+    
+    
+    // MARK: - Private Properties
+    private var filteredDataSource: [Countries.CountryPresentationModel] = []
     
     
     // MARK: - Initializers
     init(presentationModels: [Countries.CountryPresentationModel] = []) {
         self.dataSource = presentationModels
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredDataSource = dataSource.filter({ (country: Countries.CountryPresentationModel) -> Bool in
+            return (country.country ?? "").lowercased().contains(searchText.lowercased())
+        })
     }
     
 }
@@ -25,7 +36,15 @@ final class CountriesTableViewDelegate: NSObject {
 // MARK: - UITableView Data Source
 extension CountriesTableViewDelegate: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = dataSource[indexPath.row]
+        
+        let model: Countries.CountryPresentationModel
+        
+        if isFiltering {
+            model = filteredDataSource[indexPath.row]
+        } else {
+            model = dataSource[indexPath.row]
+        }
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: CountryCell.cellIdentifier) as? CountryCell {
             cell.fill(model: model)
             return cell
@@ -39,7 +58,11 @@ extension CountriesTableViewDelegate: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        if isFiltering {
+            return filteredDataSource.count
+        } else {
+            return dataSource.count
+        }
     }
     
 }

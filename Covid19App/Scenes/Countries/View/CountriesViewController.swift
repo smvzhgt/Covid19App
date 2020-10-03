@@ -16,6 +16,13 @@ final class CountriesViewController: BaseViewController {
     
     // MARK: - Private Properties
     private lazy var tableViewDelegate = CountriesTableViewDelegate()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
     
     
     // MARK: - IBOutlets
@@ -28,6 +35,7 @@ final class CountriesViewController: BaseViewController {
         
         configureTopBar()
         configureTableView()
+        configureSearchController()
         fetchInformation()
     }
     
@@ -43,7 +51,8 @@ final class CountriesViewController: BaseViewController {
     }
     
     private func configureTableView() {
-        tableView.register(UINib(nibName: CountryCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: CountryCell.cellIdentifier)
+        let nibCell = UINib(nibName: CountryCell.cellIdentifier, bundle: nil)
+        tableView.register(nibCell, forCellReuseIdentifier: CountryCell.cellIdentifier)
         tableView.delegate = tableViewDelegate
         tableView.dataSource = tableViewDelegate
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -53,6 +62,14 @@ final class CountriesViewController: BaseViewController {
         showLoading()
         let request = Countries.Fetch.Request()
         interactor.fetchCountriesInformation(request: request)
+    }
+    
+    private func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Country"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
 }
@@ -68,6 +85,19 @@ extension CountriesViewController: CountriesViewProtocol {
             tableViewDelegate.dataSource = viewModel.models
             tableView.reloadData()
         }
+    }
+    
+}
+
+extension CountriesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.searchTextField.text else {
+            return
+        }
+        
+        tableViewDelegate.isFiltering = isFiltering
+        tableViewDelegate.filterContentForSearchText(searchText)
+        tableView.reloadData()
     }
     
 }
