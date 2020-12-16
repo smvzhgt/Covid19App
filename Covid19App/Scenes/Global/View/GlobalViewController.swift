@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class GlobalViewController: BaseViewController {
     
@@ -35,11 +36,6 @@ final class GlobalViewController: BaseViewController {
     // MARK: - Private Functions
     private func configureTopBar() {
         navigationItem.title = "World Coronavirus Information"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshData))
-    }
-    
-    @objc private func refreshData() {
-        fetchInformation()
     }
     
     private func configureTableView() {

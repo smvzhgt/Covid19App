@@ -15,14 +15,14 @@ final class CountriesInteractor {
     
     
     // MARK: - Private Properties
-    private var service: CaseServiceProtocol
+    private let dataProvider: CaseDataProviderProtocol
     
     
     // MARK: - Initializers
     init(presenter: CountriesPresenterProtocol,
-         service: CaseServiceProtocol = CaseService()) {
+         dataProvider: CaseDataProviderProtocol = CaseDataProvider()) {
         self.presenter = presenter
-        self.service = service
+        self.dataProvider = dataProvider
     }
     
 }
@@ -31,7 +31,7 @@ final class CountriesInteractor {
 // MARK: - Extension
 extension CountriesInteractor: CountriesInteractorProtocol {
     func fetchCountriesInformation(request: Countries.Fetch.Request) {
-        service.fetchCountriesCases { [weak self] (result: Result<[CaseModel], CommonError>) in
+        dataProvider.fetchCountryCases { [weak self] (result: Result<[CaseModel], CommonError>) in
             guard let `self` = self else { return }
             let response = Countries.Fetch.Response(result: result)
             self.presenter.presentFetchCountriesInformation(response: response)

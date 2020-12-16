@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 protocol RequestExecutorProtocol {
-    func execute<T: Decodable>(with urlRequest: URLRequest, completion: @escaping((Result<T, CommonError>) -> Void))
+    func execute<T: Decodable>(with urlRequest: URLRequest, completion: @escaping (_ result: T?, _ error: CommonError?) -> Void)
 }
 
 
@@ -27,6 +27,47 @@ final class RequestExecutor {
 
 // MARK: - Extension
 extension RequestExecutor: RequestExecutorProtocol {
+    
+    func execute<T: Decodable>(with urlRequest: URLRequest, completion: @escaping (T?, CommonError?) -> Void) {
+        let task = urlSession.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    completion(nil, CommonError.networkError(error: error))
+                }
+            }
+            
+            guard self.isSuccessCode(response) else {
+                DispatchQueue.main.async {
+                    completion(nil, CommonError.invalidRequest)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(nil, CommonError.invalidResponseDataType)
+                }
+                return
+            }
+            
+            do {
+                let decoder: JSONDecoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .secondsSince1970
+                let resultData = try decoder.decode(T.self, from: data)
+                DispatchQueue.main.async {
+                    completion(resultData, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(nil, CommonError.decodingDataError)
+                }
+            }
+            
+        }
+        
+        task.resume()
+    }
     
     func execute<T: Decodable>(with urlRequest: URLRequest, completion: @escaping ((Result<T, CommonError>) -> Void)) {
         
@@ -66,6 +107,7 @@ extension RequestExecutor: RequestExecutorProtocol {
             }
             
         }
+        
         task.resume()
     }
     

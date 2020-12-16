@@ -15,14 +15,14 @@ final class GlobalInteractor {
     
     
     // MARK: - Private Properties
-    private var service: CaseServiceProtocol
+    private let dataProvider: CaseDataProviderProtocol
     
     
     // MARK: - Initializers
     init(presenter: GlobalPresenterProtocol,
-         service: CaseServiceProtocol = CaseService()) {
+         dataProvider: CaseDataProviderProtocol = CaseDataProvider()) {
         self.presenter = presenter
-        self.service = service
+        self.dataProvider = dataProvider
     }
     
 }
@@ -31,7 +31,7 @@ final class GlobalInteractor {
 // MARK: - Extension
 extension GlobalInteractor: GlobalInteractorProtocol {
     func fetchGlobalInformation(request: Global.Fetch.Request) {
-        service.fetchAllCases {  [weak self] (result: Result<GlobalCasesModel, CommonError>) in
+        dataProvider.fetchGlobalCases {  [weak self] (result: Result<GlobalCasesModel?, CommonError>) in
             guard let `self` = self else { return }
             let response = Global.Fetch.Response(result: result)
             self.presenter.presentFetchGlobalInformation(response: response)

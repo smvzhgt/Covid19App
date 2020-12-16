@@ -43,11 +43,6 @@ final class CountriesViewController: BaseViewController {
     // MARK: - Private Functions
     private func configureTopBar() {
         navigationItem.title = "Coronavirus by Country"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshData))
-    }
-    
-    @objc private func refreshData() {
-        fetchInformation()
     }
     
     private func configureTableView() {

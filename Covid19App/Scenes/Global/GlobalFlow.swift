@@ -14,7 +14,7 @@ enum Global {
             
         }
         struct Response {
-            let result: Result<GlobalCasesModel, CommonError>
+            let result: Result<GlobalCasesModel?, CommonError>
         }
         struct ViewModel {
             let models: [GlobalPresentationModel]

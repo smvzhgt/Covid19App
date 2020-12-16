@@ -15,12 +15,12 @@ final class GlobalPresenter {
     
     
     // MARK: - Private Functions
-    private func buildPresentationModels(model: GlobalCasesModel) -> [Global.GlobalPresentationModel] {
-        let casesModelValue = FormatUtil.formatValue(value: model.cases ?? 0) ?? ""
+    private func buildPresentationModels(model: GlobalCasesModel?) -> [Global.GlobalPresentationModel] {
+        let casesModelValue = FormatUtil.formatValue(value: model?.cases) ?? "0"
         let casesModel = Global.GlobalPresentationModel(category: "Coronavirus cases", value: casesModelValue)
-        let deathsModelValue = FormatUtil.formatValue(value: model.deaths ?? 0) ?? ""
+        let deathsModelValue = FormatUtil.formatValue(value: model?.deaths) ?? ""
         let deathsModel = Global.GlobalPresentationModel(category: "Deaths", value: deathsModelValue)
-        let recoveredModelValue = FormatUtil.formatValue(value: model.recovered ?? 0) ?? ""
+        let recoveredModelValue = FormatUtil.formatValue(value: model?.recovered) ?? ""
         let recoveredModel = Global.GlobalPresentationModel(category: "Recovered", value: recoveredModelValue)
         return [casesModel, deathsModel, recoveredModel]
     }

@@ -9,8 +9,8 @@
 import Foundation
 
 protocol APIClientProtocol {
-    func fetchAllCases(completion: @escaping (Result<GlobalCasesModel, CommonError>) -> Void)
-    func fetchCountriesCases(completion: @escaping (Result<[CaseModel], CommonError>) -> Void)
+    func fetchAllCases(completion: @escaping (_ result: GlobalCasesModel?, _ error: CommonError?) -> Void)
+    func fetchCountryCases(completion: @escaping (_ result: [CaseModel]?, _ error: CommonError?) -> Void)
 }
 
 
@@ -30,18 +30,18 @@ final class APIClient {
 
 // MARK: - Extension
 extension APIClient: APIClientProtocol {
-    
-    func fetchAllCases(completion: @escaping (Result<GlobalCasesModel, CommonError>) -> Void) {
+
+    func fetchAllCases(completion: @escaping (GlobalCasesModel?, CommonError?) -> Void) {
         guard let urlRequest = AllCasesRequest().getURLRequest() else {
-            return completion(.failure(CommonError.invalidRequest))
+            return completion(nil, CommonError.invalidRequest)
         }
         
         executor.execute(with: urlRequest, completion: completion)
     }
     
-    func fetchCountriesCases(completion: @escaping (Result<[CaseModel], CommonError>) -> Void) {
+    func fetchCountryCases(completion: @escaping ([CaseModel]?, CommonError?) -> Void) {
         guard let urlRequest = CountiesCasesRequest().getURLRequest() else {
-            return completion(.failure(CommonError.invalidRequest))
+            return completion(nil, CommonError.invalidRequest)
         }
         
         executor.execute(with: urlRequest, completion: completion)
