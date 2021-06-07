@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol ModuleBuilder: class {
+protocol ModuleBuilder: AnyObject {
     func build() -> UIViewController
 }

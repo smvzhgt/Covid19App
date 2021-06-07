@@ -9,19 +9,19 @@
 import Foundation
 
 // MARK: - Business Logic Protocol
-protocol CountriesInteractorProtocol: class {
+protocol CountriesInteractorProtocol: AnyObject {
     func fetchCountriesInformation(request: Countries.Fetch.Request)
 }
 
 
 // MARK: - Presentation Protocol
-protocol CountriesPresenterProtocol: class {
+protocol CountriesPresenterProtocol: AnyObject {
     func presentFetchCountriesInformation(response: Countries.Fetch.Response)
 }
 
 
 // MARK: - View Protocol
-protocol CountriesViewProtocol: class {
+protocol CountriesViewProtocol: AnyObject {
     func displayFetchCountriesInformation(viewModel: Countries.Fetch.ViewModel)
 }
 

@@ -9,19 +9,19 @@
 import Foundation
 
 // MARK: - Business Logic Protocol
-protocol GlobalInteractorProtocol: class {
+protocol GlobalInteractorProtocol: AnyObject {
     func fetchGlobalInformation(request: Global.Fetch.Request)
 }
 
 
 // MARK: - Presentation Protocol
-protocol GlobalPresenterProtocol: class {
+protocol GlobalPresenterProtocol: AnyObject {
     func presentFetchGlobalInformation(response: Global.Fetch.Response)
 }
 
 
 // MARK: - View Protocol
-protocol GlobalViewProtocol: class {
+protocol GlobalViewProtocol: AnyObject {
     func displayFetchGlobalInformation(viewModel: Global.Fetch.ViewModel)
 }
 
